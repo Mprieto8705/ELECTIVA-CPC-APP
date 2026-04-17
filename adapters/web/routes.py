@@ -23,9 +23,10 @@ def create_routes(auth_service):
                 else:
                     return redirect('/guest')
 
-            return "Credenciales incorrectas"
-
+            return render_template('login.html', error="Credenciales incorrectas")
+        
         return render_template('login.html')
+
 
     @routes.route('/register', methods=['GET', 'POST'])
     def register():
